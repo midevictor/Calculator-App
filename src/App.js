@@ -24,6 +24,9 @@ const App = () => {
   const inputNum = (e) => {
     // if the current state (ie whatever the user is about to input) is equal to .( a decimal point) and the previous input is also equal to .( a decimal point) then return which invalidates the input number.
     if (curState.includes(".") && e.target.innerText === ".") return;
+    if(curState.length > 15){
+      return;
+    }
     // when the result has been set to true, then set the previous state to an empty string.
     if (result) {
       setPreState("");
